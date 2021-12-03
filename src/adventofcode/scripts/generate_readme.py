@@ -14,6 +14,7 @@ def generate_readme():
     readme_file = os.path.abspath(path)
 
     with open(readme_file) as f:
+        print(f)
         current_readme = f.read()
 
     readme = _replace_between_tags(
