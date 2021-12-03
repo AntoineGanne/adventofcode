@@ -1,66 +1,21 @@
-from collections import deque
-from typing import List, Optional
+from typing import List
 
 from adventofcode.util.exceptions import SolutionNotFoundException
 from adventofcode.util.helpers import solution_timer
 from adventofcode.util.input_helpers import get_input_for_day
 
 
-def sonar_sweep(measurements: List[int]) -> int:
-    previous: Optional[int] = None
-    count = 0
-
-    for measurement in measurements:
-        if previous is not None and measurement > previous:
-            count += 1
-
-        previous = measurement
-
-    return count
-
-
-def count_increasing_windows(windows: List[List[int]]) -> int:
-    previous: Optional[int] = None
-    count = 0
-
-    for window in windows:
-        if previous is not None and sum(window) > previous:
-            count += 1
-
-        previous = sum(window)
-
-    return count
-
-
-def sonar_sweep_sliding_window(measurements: List[int]) -> int:
-    windows: List[List[int]] = []
-    window: deque[int] = deque(maxlen=3)
-
-    for measurement in measurements:
-        window.append(measurement)
-
-        if len(window) == 3:
-            windows.append(list(window))
-
-    return count_increasing_windows(windows)
-
-
-def sonar_sweep_sliding_window_reuse(measurements: List[int]) -> int:
-    windows: List[List[int]] = []
-    window: deque[int] = deque(maxlen=3)
-
-    for measurement in measurements:
-        window.append(measurement)
-
-        if len(window) == 3:
-            windows.append(list(window))
-
-    return sonar_sweep(list(map(sum, windows)))
-
-
 @solution_timer(2021, 1, 1)
 def part_one(input_data: List[str]):
-    answer = sonar_sweep(list(map(int, input_data)))
+    last_depth = 9999999
+    depth_increase_counter = 0
+    for line in open("D:/coding_perso/advent_of_code/aox/advent-of-code-2021/day 1/input.txt", "r"):
+        depth = int(line)
+        if depth > last_depth:
+            depth_increase_counter += 1
+        last_depth = depth
+
+    answer = depth_increase_counter
 
     if not answer:
         raise SolutionNotFoundException(2021, 1, 1)
@@ -70,17 +25,22 @@ def part_one(input_data: List[str]):
 
 @solution_timer(2021, 1, 2)
 def part_two(input_data: List[str]):
-    answer = sonar_sweep_sliding_window(list(map(int, input_data)))
+    last_depth = 9999999
+    depth_increase_counter = 0
+    sliding_window = list()
+    for i, line in enumerate(open("D:/coding_perso/advent_of_code/aox/advent-of-code-2021/day 1/input.txt", "r")):
+        depth = int(line)
+        sliding_window.append(depth)
+        if i == 0 or i == 1:
+            continue
+        sum_depths = sum(sliding_window)
+        if i < 10: print(str(i) + " sum:" + str(sum_depths))
+        if sum_depths > last_depth:
+            depth_increase_counter += 1
+        last_depth = sum_depths
+        sliding_window.pop(0)
 
-    if not answer:
-        raise SolutionNotFoundException(2021, 1, 2)
-
-    return answer
-
-
-@solution_timer(2021, 1, 1, version='re-use part one')
-def part_two_reuse_part_one(input_data: List[str]):
-    answer = sonar_sweep_sliding_window_reuse(list(map(int, input_data)))
+    answer = depth_increase_counter
 
     if not answer:
         raise SolutionNotFoundException(2021, 1, 2)
@@ -92,4 +52,3 @@ if __name__ == '__main__':
     data = get_input_for_day(2021, 1)
     part_one(data)
     part_two(data)
-    part_two_reuse_part_one(data)
