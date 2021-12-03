@@ -79,7 +79,7 @@ def part_two(input_data: List[str]):
 
 @solution_timer(2021,3,3)
 def part_two_with_binary_tree(input_data: List[str]):
-    bin
+    print("salut")
 
 
 test_data = {"00100",
