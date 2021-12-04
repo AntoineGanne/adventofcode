@@ -77,10 +77,6 @@ def part_two(input_data: List[str]):
 
     return answer
 
-@solution_timer(2021,3,3)
-def part_two_with_binary_tree(input_data: List[str]):
-    print("salut")
-
 
 test_data = {"00100",
              "11110",
