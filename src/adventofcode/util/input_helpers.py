@@ -12,8 +12,17 @@ def get_input_for_day(year: int, day: int) -> List[str]:
     return _get_input(input_file)
 
 
+def get_test_input_for_day(year: int, day: int) -> List[str]:
+    """
+    Get the input for the year/day as list of strings
+    """
+    input_file = os.path.join(ROOT_DIR, f'..', f'..', 'tests', f'year_{year}', f'inputs', f'day_{day:02}.txt')
+    print(input_file)
+    return _get_input(input_file)
+
+
 def get_input_for_day_as_str(year: int, day: int) -> str:
-    input_file = os.path.join(ROOT_DIR, 'inputs', str(year), f'day_{day:02}.txt')
+    input_file = os.path.join(ROOT_DIR, 'inputs', str(year), f'day_{day:02}_input.txt')
     return _read_file(input_file)
 
 

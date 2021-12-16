@@ -27,6 +27,12 @@ def add_day():
     create_module_dir(test_module_path)
     write_test_template(test_file, year, day)
 
+    # Empty test input
+    test_input_module_path = os.path.abspath(os.path.join(ROOT_DIR, '../../tests', f'year_{year}', f'inputs'))
+    test_file_input = os.path.join(test_input_module_path, f'day_{day:02}.txt')
+    create_dir(test_input_module_path)
+    write_template(test_file_input, "")
+
     verify_input_exists(year, day)
 
 
