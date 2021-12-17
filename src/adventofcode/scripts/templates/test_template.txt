@@ -4,9 +4,9 @@ from adventofcode.year_{year}.day_{file_day}_{year} import part_two, part_one
 
 def test_part_one():
     answer = part_one(get_test_input_for_day({year}, {day}))
-    assert answer != None
+    assert answer is not None
 
 
 def test_part_two():
     answer = part_two(get_test_input_for_day({year}, {day}))
-    assert answer != None
+    assert answer is not None
