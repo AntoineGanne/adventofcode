@@ -66,6 +66,7 @@ def part_two(input_data: List[str]):
         # start backtracking ? 🙈
 
         for i in range(7):
+            print(i)
 
         all_possible_solutions = permutations(segments)
 

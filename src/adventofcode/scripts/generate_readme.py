@@ -13,8 +13,7 @@ def generate_readme():
     path = os.path.join(ROOT_DIR, '../../README.md')
     readme_file = os.path.abspath(path)
 
-    with open(readme_file) as f:
-        print(f)
+    with open(readme_file, encoding='utf-8') as f:
         current_readme = f.read()
 
     readme = _replace_between_tags(
@@ -26,7 +25,7 @@ def generate_readme():
 
     readme = _update_stars(readme)
 
-    with open(readme_file, 'w') as f:
+    with open(readme_file, 'w', encoding='utf-8') as f:
         f.write(readme)
 
 

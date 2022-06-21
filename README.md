@@ -1,10 +1,10 @@
 # Advent of Code ⭐️
-[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=78&color=yellow)]()
-[![codecov](https://codecov.io/gh/marcelblijleven/adventofcode/branch/master/graph/badge.svg?token=jZ2TgfyltM)](https://codecov.io/gh/marcelblijleven/adventofcode)
-[![tests](https://github.com/marcelblijleven/adventofcode/actions/workflows/tests.yaml/badge.svg)](https://github.com/marcelblijleven/adventofcode)
-[![version](https://img.shields.io/github/v/release/marcelblijleven/adventofcode.svg)](https://github.com/marcelblijleven/adventofcode/releases)
+[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=38&color=yellow)]()
+[![tests](https://github.com/marcelblijleven/adventofcode/actions/workflows/tests.yaml/badge.svg)](https://github.com/antoineganne/adventofcode)
+[![version](https://img.shields.io/github/v/release/antoineganne/adventofcode.svg)](https://github.com/antoineganne/adventofcode/releases)
+<!--[![codecov](https://codecov.io/gh/marcelblijleven/adventofcode/branch/master/graph/badge.svg?token=jZ2TgfyltM)](https://codecov.io/gh/marcelblijleven/adventofcode)-->
 
-Collection of my Advent of Code solutions in an overkill project setup 👻🎄.
+Collection of my Advent of Code solutions in an overkill project setup I forked 👻🎄.
 
 ## Features ✨
 - Solutions are timed with the help of a decorator using `time.perf_counter`
@@ -22,7 +22,8 @@ Collection of my Advent of Code solutions in an overkill project setup 👻🎄.
 
 <!-- start completed section -->
 ## Completed ⭐️
-### 2015
+### 2017
+### 2021
 - day 01: part one ⭐️, part two ⭐️
 - day 02: part one ⭐️, part two ⭐️
 - day 03: part one ⭐️, part two ⭐️
@@ -40,30 +41,8 @@ Collection of my Advent of Code solutions in an overkill project setup 👻🎄.
 - day 15: part one ⭐️, part two ⭐️
 - day 16: part one ⭐️, part two ⭐️
 - day 17: part one ⭐️, part two ⭐️
-- day 18: part one ⭐️, part two ⭐️
-- day 19: part one ⭐️, part two ⭐️
 - day 20: part one ⭐️, part two ⭐️
-- day 21: part one ⭐️, part two ⭐️
 - day 22: part one ⭐️, part two ⭐️
-- day 23: part one ⭐️, part two ⭐️
-- day 24: part one ⭐️, part two ⭐️
-- day 25: part one ⭐️, part two ⭐️
-### 2020
-- day 01: part one ⭐️, part two ⭐️
-- day 02: part one ⭐️, part two ⭐️
-- day 03: part one ⭐️, part two ⭐️
-- day 04: part one ⭐️, part two ⭐️
-- day 05: part one ⭐️, part two ⭐️
-- day 06: part one ⭐️, part two ⭐️
-- day 07: part one ⭐️, part two ⭐️
-- day 08: part one ⭐️, part two ⭐️
-- day 09: part one ⭐️, part two ⭐️
-- day 10: part one ⭐️, part two ⭐️
-- day 11: part one ⭐️, part two ⭐️
-### 2021
-- day 01: part one ⭐️, part two ⭐️
-- day 02: part one ⭐️, part two ⭐️
-- day 03: part one ⭐️, part two ⭐️
 
 <!-- end completed section -->
 
