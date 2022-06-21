@@ -22,7 +22,6 @@ Collection of my Advent of Code solutions in an overkill project setup I forked 
 
 <!-- start completed section -->
 ## Completed ⭐️
-### 2017
 ### 2021
 - day 01: part one ⭐️, part two ⭐️
 - day 02: part one ⭐️, part two ⭐️
