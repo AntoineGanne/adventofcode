@@ -1,5 +1,5 @@
 # Advent of Code ⭐️
-[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=38&color=yellow)]()
+[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=40&color=yellow)]()
 [![tests](https://github.com/marcelblijleven/adventofcode/actions/workflows/tests.yaml/badge.svg)](https://github.com/antoineganne/adventofcode)
 [![version](https://img.shields.io/github/v/release/antoineganne/adventofcode.svg)](https://github.com/antoineganne/adventofcode/releases)
 <!--[![codecov](https://codecov.io/gh/marcelblijleven/adventofcode/branch/master/graph/badge.svg?token=jZ2TgfyltM)](https://codecov.io/gh/marcelblijleven/adventofcode)-->
@@ -22,6 +22,8 @@ Collection of my Advent of Code solutions in an overkill project setup I forked 
 
 <!-- start completed section -->
 ## Completed ⭐️
+### 2019
+- day 01: part one ⭐️, part two ⭐️
 ### 2021
 - day 01: part one ⭐️, part two ⭐️
 - day 02: part one ⭐️, part two ⭐️
@@ -42,6 +44,7 @@ Collection of my Advent of Code solutions in an overkill project setup I forked 
 - day 17: part one ⭐️, part two ⭐️
 - day 20: part one ⭐️, part two ⭐️
 - day 22: part one ⭐️, part two ⭐️
+### 2022
 
 <!-- end completed section -->
 
