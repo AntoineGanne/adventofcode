@@ -41,7 +41,7 @@ def test_part_one():
 
 def test_part_two():
     answer = part_two(["C200B40A82"])
-    assert answer==3
+    assert answer == 3
 
     answer = part_two(["04005AC33890"])
     assert answer == 54
@@ -63,5 +63,3 @@ def test_part_two():
 
     answer = part_two(["9C0141080250320F1802104A08"])
     assert answer == 1
-
-

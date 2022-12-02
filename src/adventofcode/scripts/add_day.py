@@ -56,7 +56,7 @@ def create_module_dir(path: str) -> None:
     create_dir(path)
 
     if not os.path.exists(init_file := os.path.join(path, '__init__.py')):
-        with open(init_file):
+        with open(init_file,'w'):
             pass
 
 

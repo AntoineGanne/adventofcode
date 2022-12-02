@@ -1,16 +1,9 @@
 import os
 from typing import List
 
-from adventofcode.config import ROOT_DIR
 from adventofcode.util.exceptions import SolutionNotFoundException
 from adventofcode.util.helpers import solution_timer
 from adventofcode.util.input_helpers import get_input_for_day
-
-from termcolor import colored, cprint
-
-from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
-import numpy as np
 
 
 @solution_timer(2021, 9, 1)

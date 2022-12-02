@@ -1,5 +1,5 @@
 from adventofcode.util.input_helpers import get_input_for_day
-from adventofcode.year_2021.day_08_2021 import part_two, part_one,output_number_under_solution
+from adventofcode.year_2021.day_08_2021 import part_two, part_one, output_number_under_solution
 
 test_input = [
     "be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe",
@@ -17,20 +17,21 @@ test_input = [
 
 def test_part_one():
     answer = part_one(test_input)
-    assert answer==26
+    assert answer == 26
 
 
 def test_part_two():
     answer = part_two(test_input)
     assert False
 
-def test_output_number_under_solution():
-    segments=['a','b','c','d','e','f','g']
-    pattern1="cf"
-    assert output_number_under_solution(segments,pattern1)=='1'
 
-    pattern3="acdfg"
+def test_output_number_under_solution():
+    segments = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+    pattern1 = "cf"
+    assert output_number_under_solution(segments, pattern1) == '1'
+
+    pattern3 = "acdfg"
     assert output_number_under_solution(segments, pattern3) == '3'
 
-    invalid_pattern="bcfe"
+    invalid_pattern = "bcfe"
     assert output_number_under_solution(segments, invalid_pattern) == 'x'

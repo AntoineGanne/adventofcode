@@ -12,18 +12,19 @@ from adventofcode.util.input_helpers import get_input_for_day, get_test_input_fo
 #         y:int
 
 
-def get_enhanced_pixel(p: List[int, int], image: dict, enhancer: List[int], board_size: List[List[int, int], List[int, int]],
-                       infinity_bit: int) -> int:
-    ns = [(i, j) for j in range(p[1] - 1, p[1] + 2) for i in range(p[0] - 1, p[0] + 2)]
-    ns2 = []
-    for pos in ns:
-        if board_size[0][0] <= pos[0] <= board_size[0][1] and board_size[1][0] <= pos[1] <= board_size[1][1]:
-            ns2.append(1 if pos in image.keys() else 0)
-        else:
-            ns2.append(infinity_bit)
-
-    index = int("".join(map(str, ns2)), 2)
-    return enhancer[index]
+# def get_enhanced_pixel(p: List[int, int], image: dict, enhancer: List[int], board_size: List[List[int, int],
+#                                                                                              List[int, int]],
+#                        infinity_bit: int) -> int:
+#     ns = [(i, j) for j in range(p[1] - 1, p[1] + 2) for i in range(p[0] - 1, p[0] + 2)]
+#     ns2 = []
+#     for pos in ns:
+#         if board_size[0][0] <= pos[0] <= board_size[0][1] and board_size[1][0] <= pos[1] <= board_size[1][1]:
+#             ns2.append(1 if pos in image.keys() else 0)
+#         else:
+#             ns2.append(infinity_bit)
+#
+#     index = int("".join(map(str, ns2)), 2)
+#     return enhancer[index]
 
 
 # def get_index(p: (int, int), image: dict):
@@ -45,9 +46,10 @@ def enhance_image(image_enhancer, input_image, infinity_bit: int):
 
     for i in range(min_i, max_i):
         for j in range(min_j, max_j):
-            p = get_enhanced_pixel((i, j), input_image, image_enhancer, ((min_i, max_i), (min_j, max_j)), infinity_bit)
-            if p:
-                output_image[(i, j)] = 1
+            print("cringe")
+            # p = get_enhanced_pixel((i, j), input_image, image_enhancer, ((min_i, max_i), (min_j, max_j)), infinity_bit)
+            # if p:
+            #     output_image[(i, j)] = 1
 
     # for v in input_image:
     #     for n in [(i, j) for j in range(v[1] - 1, v[1] + 2) for i in range(v[0] - 1, v[0] + 2)

@@ -10,8 +10,8 @@ def part_one(input_data: List[str]):
     depth = 0
     horizontal_position = 0
     for line in input_data:
-        instruction, value = line.split(" ")
-        value = int(value)
+        instruction, value_str = line.split(" ")
+        value = int(value_str)
         if instruction == "forward":
             horizontal_position += value
         elif instruction == "down":
@@ -20,7 +20,7 @@ def part_one(input_data: List[str]):
             depth -= value
         else:
             raise Exception("error when parsing input")
-    answer = depth*horizontal_position
+    answer = depth * horizontal_position
 
     if not answer:
         raise SolutionNotFoundException(2021, 2, 1)
@@ -30,15 +30,15 @@ def part_one(input_data: List[str]):
 
 @solution_timer(2021, 2, 2)
 def part_two(input_data: List[str]):
-    aim=0
+    aim = 0
     depth = 0
     horizontal_position = 0
     for line in input_data:
-        instruction, value = line.split(" ")
-        value = int(value)
+        instruction, value_str = line.split(" ")
+        value = int(value_str)
         if instruction == "forward":
             horizontal_position += value
-            depth += aim*value
+            depth += aim * value
         elif instruction == "down":
             aim += value
         elif instruction == "up":

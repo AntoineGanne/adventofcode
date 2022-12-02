@@ -1,6 +1,6 @@
 import os
 
-import requests  # noqa
+import requests
 
 from adventofcode.config import ROOT_DIR
 
@@ -17,6 +17,7 @@ def _download_input(year: int, day: int, session: str) -> bytes:
     """
     cookies = {'session': session}
     url = f'https://adventofcode.com/{year}/day/{day}/input'
+    headers = {'User-Agent': 'github.com/AntoineGanne/adventofcode by antoine.ganne+aoc@hotmail.fr'}
     resp = requests.get(url, cookies=cookies)
     resp.raise_for_status()
     return resp.content  # type: ignore

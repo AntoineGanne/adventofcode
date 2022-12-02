@@ -9,7 +9,7 @@ from adventofcode.util.input_helpers import get_input_for_day
 def part_one(input_data: List[str]):
     last_depth = 9999999
     depth_increase_counter = 0
-    for line in open("D:/coding_perso/advent_of_code/aox/advent-of-code-2021/day 1/input.txt", "r"):
+    for line in input_data:
         depth = int(line)
         if depth > last_depth:
             depth_increase_counter += 1
@@ -28,7 +28,7 @@ def part_two(input_data: List[str]):
     last_depth = 9999999
     depth_increase_counter = 0
     sliding_window = list()
-    for i, line in enumerate(open("D:/coding_perso/advent_of_code/aox/advent-of-code-2021/day 1/input.txt", "r")):
+    for i, line in enumerate(input_data):
         depth = int(line)
         sliding_window.append(depth)
         if i == 0 or i == 1:

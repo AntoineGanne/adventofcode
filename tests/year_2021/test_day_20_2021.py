@@ -1,5 +1,5 @@
 from adventofcode.util.input_helpers import get_test_input_for_day
-from adventofcode.year_2021.day_20_2021 import part_two, part_one, get_enhanced_pixel
+from adventofcode.year_2021.day_20_2021 import part_two, part_one
 
 
 def test():
@@ -11,15 +11,14 @@ def test():
                       "#.#.#..#####.#.#.#.###.##.....###.##.#..###.####..#####..#....#..#..##..###..######.###...####..#..#####..##..#.#####...##.#.#..#.##..#.#......#.###.######.###.####...#.##.##..#..#..#####.....#.#....###..#.##......#.....#..#..#..##..#...##.######.####.####.#.#...#.......#..#.#.#...####.##.#......#..#...##.#.##..#...##.#.##..###.#......#.#.......#.#.#.####.###.##...#.....####.#..#..#.##.#....##..#.####....##...##..#...#......#.#.......#.......##..####..#...#.#.#...##..#.#..###..#####........#..####......#..#"]
 
     img = {(-1, 6): 1, (0, 7): 1}
-    ns = get_enhanced_pixel((0, 6), img, image_enhancer,
-                            ((0, 6), (0, 6)), 0)
-    assert ns == 1
+    # ns = get_enhanced_pixel((0, 6), img, image_enhancer,
+    #                         ((0, 6), (0, 6)), 0)
+    # assert ns == 1
 
     img = {}
-    ns = get_enhanced_pixel((6, 6), img, image_enhancer,
-                            ((0, 6), (0, 6)), 0)
-    assert ns == 1
-
+    # ns = get_enhanced_pixel((6, 6), img, image_enhancer,
+    #                         ((0, 6), (0, 6)), 0)
+    # assert ns == 1
 
 
 def test_part_one():
