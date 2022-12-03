@@ -1,5 +1,5 @@
 # Advent of Code ⭐️
-[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=44&color=yellow)]()
+[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=46&color=yellow)]()
 [![tests](https://github.com/marcelblijleven/adventofcode/actions/workflows/tests.yaml/badge.svg)](https://github.com/antoineganne/adventofcode)
 [![version](https://img.shields.io/github/v/release/antoineganne/adventofcode.svg)](https://github.com/antoineganne/adventofcode/releases)
 <!--[![codecov](https://codecov.io/gh/marcelblijleven/adventofcode/branch/master/graph/badge.svg?token=jZ2TgfyltM)](https://codecov.io/gh/marcelblijleven/adventofcode)-->
@@ -47,6 +47,7 @@ Collection of my Advent of Code solutions in an overkill project setup I forked 
 ### 2022
 - day 01: part one ⭐️, part two ⭐️
 - day 02: part one ⭐️, part two ⭐️
+- day 03: part one ⭐️, part two ⭐️
 
 <!-- end completed section -->
 
@@ -103,9 +104,11 @@ session cookie is stored in `.session`. To get this value:
 3. View the cookies and copy the value of the `session` cookie.
 4. Paste the cookie value into the `.session` file
 
+If you run the command without arguments, it will add input of the current day.
+
 Example:
 ```shell
-(venv) add-day 2015 14
+(venv) add-day --year 2015 --day 14
 ```
 
 Output:

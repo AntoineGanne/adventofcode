@@ -2,6 +2,7 @@ import os
 import sys
 from argparse import ArgumentParser
 from typing import List, Tuple
+from datetime import date
 
 from requests import HTTPError  # noqa
 
@@ -13,6 +14,9 @@ from adventofcode.util.input_helpers import get_input_for_day
 
 def add_day():
     year, day = _parse_args(sys.argv[1:])
+    print(year, day)
+    if year is None:
+        year = "2022"
     console.print(f'Creating solution day file for year {year} day {day}')
 
     # Solution file
@@ -56,7 +60,7 @@ def create_module_dir(path: str) -> None:
     create_dir(path)
 
     if not os.path.exists(init_file := os.path.join(path, '__init__.py')):
-        with open(init_file,'w'):
+        with open(init_file, 'w'):
             pass
 
 
@@ -120,9 +124,10 @@ def write_template(filename: str, template: str):
 
 
 def _parse_args(args: List[str]) -> Tuple[int, int]:
+    print("helloooooooooooooooooooooooooooooooooooooooooooooooooooo")
     parser = ArgumentParser(description='Add a day')
-    parser.add_argument('year', type=int, help='The year of the exercise')
-    parser.add_argument('day', type=int, help='The day of the exercise')
+    parser.add_argument('--year', type=int, required=False, default=date.today().year, help='The year of the exercise')
+    parser.add_argument('--day', type=int, required=False, default=date.today().day, help='The day of the exercise')
     parsed = parser.parse_args(args)
     return parsed.year, parsed.day
 
