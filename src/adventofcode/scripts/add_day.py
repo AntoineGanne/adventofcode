@@ -14,7 +14,6 @@ from adventofcode.util.input_helpers import get_input_for_day
 
 def add_day():
     year, day = _parse_args(sys.argv[1:])
-    print(year, day)
     if year is None:
         year = "2022"
     console.print(f'Creating solution day file for year {year} day {day}')
@@ -124,7 +123,6 @@ def write_template(filename: str, template: str):
 
 
 def _parse_args(args: List[str]) -> Tuple[int, int]:
-    print("helloooooooooooooooooooooooooooooooooooooooooooooooooooo")
     parser = ArgumentParser(description='Add a day')
     parser.add_argument('--year', type=int, required=False, default=date.today().year, help='The year of the exercise')
     parser.add_argument('--day', type=int, required=False, default=date.today().day, help='The day of the exercise')
