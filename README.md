@@ -1,5 +1,5 @@
 # Advent of Code ⭐️
-[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=52&color=yellow)]()
+[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=54&color=yellow)]()
 [![tests](https://github.com/marcelblijleven/adventofcode/actions/workflows/tests.yaml/badge.svg)](https://github.com/antoineganne/adventofcode)
 [![version](https://img.shields.io/github/v/release/antoineganne/adventofcode.svg)](https://github.com/antoineganne/adventofcode/releases)
 <!--[![codecov](https://codecov.io/gh/marcelblijleven/adventofcode/branch/master/graph/badge.svg?token=jZ2TgfyltM)](https://codecov.io/gh/marcelblijleven/adventofcode)-->
@@ -51,6 +51,7 @@ Collection of my Advent of Code solutions in an overkill project setup I forked 
 - day 04: part one ⭐️, part two ⭐️
 - day 05: part one ⭐️, part two ⭐️
 - day 06: part one ⭐️, part two ⭐️
+- day 07: part one ⭐️, part two ⭐️
 
 <!-- end completed section -->
 
