@@ -76,7 +76,6 @@ def part_two(input_data: List[str]):
             return sand_falling(x + 1, y + 1, y_abyss)
         else:
             obstacles.add((x, y))
-            print(x, y)
             return x, y
 
     answer = 1
