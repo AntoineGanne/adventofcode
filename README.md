@@ -120,7 +120,7 @@ session cookie is stored in `.session`. To get this value:
 1. Go to the [AOC site](https://adventofcode.com).
 2. Make sure you're logged in, every user has unique input data
 3. View the cookies and copy the value of the `session` cookie.
-4. Paste the cookie value into the `.session` file
+4. Paste the cookie value into the `.session` file. If the `.session` file doesn't exist, create it with the `.session.template` file
 
 If you run the command without arguments, it will add input of the current day.
 

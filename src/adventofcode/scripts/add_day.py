@@ -30,11 +30,11 @@ def add_day():
     create_module_dir(test_module_path)
     write_test_template(test_file, year, day)
 
-    # Empty test input
+    # Test input
     test_input_module_path = os.path.abspath(os.path.join(ROOT_DIR, '../../tests', f'year_{year}', f'inputs'))
     test_file_input = os.path.join(test_input_module_path, f'day_{day:02}.txt')
     create_dir(test_input_module_path)
-    write_template(test_file_input, "")
+    # write_template(test_file_input, "")  #We don't want to empty the test input
 
     verify_input_exists(year, day)
 
@@ -83,7 +83,7 @@ def verify_input_exists(year: int, day: int) -> None:
         except FileNotFoundError:
             console.print(f'[red]Could not retrieve input data for year {year} day {day}: .session not set correctly')
 
-    raise ValueError('unknown exception occurred in verify_input_exists')
+    raise ValueError('Exception occurred in verify_input_exists')
 
 
 def _read_solution_template(template_path: str, year: str, day: str) -> str:
