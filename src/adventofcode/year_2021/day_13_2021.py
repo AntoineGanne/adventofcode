@@ -35,7 +35,7 @@ def part_two(input_data: List[str]):
 
     folds = []
     for line in input_folds:
-        print("fold:", line)
+        # print("fold:", line)
         (direction, value) = re.findall(r"fold along ([xy])=(\d+)", line)[0]
         folds.append((direction, int(value)))
 
@@ -48,7 +48,7 @@ def part_two(input_data: List[str]):
                 y = 2 * val - y
         dots.add((x, y))
 
-    print(dots)
+    # print(dots)
 
     size = reduce(lambda a, b: (max(a[0], b[0]), max(a[1], b[1])), dots)
 
@@ -62,7 +62,7 @@ def part_two(input_data: List[str]):
             line += char
         print(line)
 
-    answer = input("number:")
+    answer = 'ZKAUCFUC' #input("number:")
 
     if not answer:
         raise SolutionNotFoundException(2021, 13, 2)

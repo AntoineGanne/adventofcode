@@ -133,8 +133,9 @@ Output:
 ```text
 (venv) [adventofcode] add-day 2015 14                                                                                                                                                                   master  ✗ ✭ ✱
 Creating solution day file for year 2015 day 14
-Wrote template to /Users/marcelblijleven/code/github.com/marcelblijleven/adventofcode/src/adventofcode/year_2015/day_14_2015.py
-Input data already exists for year 2015 day 14, skipping download
+Did not write template for year 2015 day 14, the file already exists.
+Did not write test template for year 2015 day 14, the file already exists.
+Automatically downloaded input data for year 2015 day 14
 ```
 
 ### generate-readme

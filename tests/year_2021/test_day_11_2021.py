@@ -33,4 +33,4 @@ def test_part_one():
 
 def test_part_two():
     answer = part_two(input)
-    assert answer==195
+    assert answer == 195

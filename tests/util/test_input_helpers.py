@@ -12,9 +12,9 @@ def test_get_input_for_day(mocker: pytest_mock.MockerFixture):
     original_root_dir = input_helpers.ROOT_DIR
     input_helpers.ROOT_DIR = 'dir'
 
-    data = get_input_for_day(2020, 1)
+    data = get_input_for_day(2023, 1)
     assert ['c0ffee', 'cafe'] == data
-    mock_get_input.assert_called_with('dir/inputs/2020/day_01.txt')
+    mock_get_input.assert_called_with('dir\\inputs\\2023\\day_01.txt')
 
     input_helpers.ROOT_DIR = original_root_dir
 
@@ -28,7 +28,7 @@ def test_get_input_for_day_as_str(mocker: pytest_mock.MockerFixture):
 
     data = get_input_for_day_as_str(2020, 1)
     assert 'c0ffee\ncafe' == data
-    mock_read_file.assert_called_with('dir/inputs/2020/day_01.txt')
+    mock_read_file.assert_called_with('dir\\inputs\\2020\\day_01.txt')
 
     input_helpers.ROOT_DIR = original_root_dir
 

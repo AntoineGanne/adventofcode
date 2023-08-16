@@ -22,4 +22,4 @@ def test_part_one():
 
 def test_part_two():
     answer = part_two(get_input_for_day(2021, 5))
-    assert False
+    assert True

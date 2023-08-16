@@ -22,7 +22,7 @@ def get_test_input_for_day(year: int, day: int) -> List[str]:
 
 
 def get_input_for_day_as_str(year: int, day: int) -> str:
-    input_file = os.path.join(ROOT_DIR, 'inputs', str(year), f'day_{day:02}_input.txt')
+    input_file = os.path.join(ROOT_DIR, 'inputs', str(year), f'day_{day:02}.txt')
     return _read_file(input_file)
 
 
