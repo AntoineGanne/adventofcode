@@ -8,22 +8,42 @@ def get_input_for_day(year: int, day: int) -> List[str]:
     """
     Get the input for the year/day as list of strings
     """
-    input_file = os.path.join(ROOT_DIR, 'inputs', str(year), f'day_{day:02}.txt')
+    input_file = os.path.join(get_input_directory_path(year, day), f'input_{day:02}_{year:04}.txt')
     return _get_input(input_file)
+
+
+def get_input_for_day_as_str(year: int, day: int) -> str:  # TODO: delete this function (only used in tests)
+    input_file = get_input_path(year, day)
+    return _read_file(input_file)
+
+
+def get_input_path(year: int, day: int) -> str:
+    return os.path.join(get_input_directory_path(year, day), f'input_{day:02}_{year:04}.txt')
 
 
 def get_test_input_for_day(year: int, day: int) -> List[str]:
     """
     Get the input for the year/day as list of strings
     """
-    input_file = os.path.join(ROOT_DIR, f'..', f'..', 'tests', f'year_{year}', f'inputs', f'day_{day:02}.txt')
-    print(input_file)
+    input_file = get_example_input_path(year, day)
     return _get_input(input_file)
 
 
-def get_input_for_day_as_str(year: int, day: int) -> str:
-    input_file = os.path.join(ROOT_DIR, 'inputs', str(year), f'day_{day:02}.txt')
-    return _read_file(input_file)
+def get_example_input_path(year: int, day: int) -> str:
+    return os.path.join(get_input_directory_path(year, day), f'example_input_{day:02}_{year:04}.txt')
+
+
+def get_test_input_module_path(year) -> str:
+    test_input_module_path = os.path.abspath(os.path.join(ROOT_DIR, 'test_inputs', f'{year}'))
+    return test_input_module_path
+
+
+def get_directory_path(year, day) -> str:
+    return os.path.abspath(os.path.join(ROOT_DIR, f'year_{year:04}', f'day_{day:02}'))
+
+
+def get_input_directory_path(year, day) -> str:
+    return os.path.abspath(os.path.join(get_directory_path(year, day), 'inputs'))
 
 
 def _read_lines(file_name) -> List[str]:

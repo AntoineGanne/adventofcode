@@ -4,12 +4,13 @@ from argparse import ArgumentParser
 from typing import List, Tuple
 from datetime import date
 
-from requests import HTTPError  # noqa
+from requests import HTTPError
 
 from adventofcode.config import ROOT_DIR
 from adventofcode.scripts.get_inputs import get_input
 from adventofcode.util.console import console
-from adventofcode.util.input_helpers import get_input_for_day
+from adventofcode.util.input_helpers import get_input_for_day, get_directory_path, get_input_directory_path, \
+    get_example_input_path, get_input_path
 
 
 def add_day():
@@ -18,41 +19,39 @@ def add_day():
         year = "2022"
     console.print(f'Creating solution day file for year {year} day {day}')
 
-    # Solution file
     module_path = os.path.join(ROOT_DIR, f'year_{year}')
-    solution_file = os.path.join(module_path, f'day_{day:02}_{year}.py')
     create_module_dir(module_path)
-    write_solution_template(solution_file, year, day)
 
-    # Test file
-    test_module_path = os.path.abspath(os.path.join(ROOT_DIR, '../../tests', f'year_{year}'))
-    test_file = os.path.join(test_module_path, f'test_day_{day:02}_{year}.py')
-    create_module_dir(test_module_path)
-    write_test_template(test_file, year, day)
+    day_directory_path = get_directory_path(year, day)
+    create_module_dir(day_directory_path)
 
-    # Test input
-    test_input_module_path = os.path.abspath(os.path.join(ROOT_DIR, '../../tests', f'year_{year}', f'inputs'))
-    test_file_input = os.path.join(test_input_module_path, f'day_{day:02}.txt')
-    create_dir(test_input_module_path)
-    # write_template(test_file_input, "")  #We don't want to empty the test input
+    solution_file = os.path.join(day_directory_path, f'solution_{day:02}_{year:4}.py')
+    solution_template_path = os.path.join(ROOT_DIR, 'scripts', 'templates', 'day_template.txt')
+    write_solution_template(solution_file, solution_template_path, year, day)
+
+    test_file = os.path.join(day_directory_path, f'test_day_{day:02}_{year}.py')
+    test_template_path = os.path.join(ROOT_DIR, 'scripts', 'templates', 'test_template.txt')
+    write_solution_template(test_file, test_template_path, year, day)
+
+    input_module_path = get_input_directory_path(year, day)
+    create_dir(input_module_path)
+
+    example_file_input = get_example_input_path(year, day)
+    if not os.path.exists(example_file_input):
+        with open(example_file_input, 'w'):
+            pass
 
     verify_input_exists(year, day)
 
 
-def write_solution_template(path: str, year: int, day: int) -> None:
+def write_solution_template(path: str, template_path: str, year: int, day: int) -> None:
     if not os.path.exists(path):
-        write_template(path, read_solution_template(year, day))
+        template = _read_template(template_path, year, day)
+        with open(path, 'w') as f:
+            f.write(template)
         console.print(f'[green]Wrote template to {path}')
     else:
         console.print(f'[yellow]Did not write template for year {year} day {day}, the file already exists.')
-
-
-def write_test_template(path: str, year: int, day: int) -> None:
-    if not os.path.exists(path):
-        write_template(path, read_test_template(year, day))
-        console.print(f'[green]Wrote test template to {path}')
-    else:
-        console.print(f'[yellow]Did not write test template for year {year} day {day}, the file already exists.')
 
 
 def create_module_dir(path: str) -> None:
@@ -81,45 +80,25 @@ def verify_input_exists(year: int, day: int) -> None:
         except HTTPError as e:
             console.print(f'[red]Could not retrieve input data for year {year} day {day} automatically: {e}')
         except FileNotFoundError:
-            console.print(f'[red]Could not retrieve input data for year {year} day {day}: .session not set correctly')
+            console.print(f'[red]Could not retrieve input data for year {year} day {day}: .session set incorrectly')
 
     raise ValueError('Exception occurred in verify_input_exists')
 
 
-def _read_solution_template(template_path: str, year: str, day: str) -> str:
+def _read_template(template_path: str, year: int, day: int) -> str:
     with open(template_path) as f:
         template = f.read()
 
-    template = template.replace('{year}', year)
-    template = template.replace('{day}', day)
-
-    return template
-
-
-def _read_test_template(template_path: str, year: str, day: str, file_day: str) -> str:
-    with open(template_path) as f:
-        template = f.read()
-
-    template = template.replace('{year}', year)
-    template = template.replace('{day}', day)
-    template = template.replace('{file_day}', file_day)
+    template = template.replace('{year}', f'{year:04}')
+    template = template.replace('{day}', str(day))
+    template = template.replace('{file_day}', f'{day:02}')
 
     return template
 
 
 def read_solution_template(year: int, day: int) -> str:
     template_path = os.path.join(ROOT_DIR, 'scripts/templates/day_template.txt')
-    return _read_solution_template(template_path, str(year), str(day))
-
-
-def read_test_template(year: int, day: int) -> str:
-    template_path = os.path.join(ROOT_DIR, 'scripts/templates/test_template.txt')
-    return _read_test_template(template_path, str(year), str(day), f'{day:02}')
-
-
-def write_template(filename: str, template: str):
-    with open(filename, 'w') as f:
-        f.write(template)
+    return _read_template(template_path, year, day)
 
 
 def _parse_args(args: List[str]) -> Tuple[int, int]:

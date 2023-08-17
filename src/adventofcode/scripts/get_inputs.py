@@ -3,6 +3,7 @@ import os
 import requests
 
 from adventofcode.config import ROOT_DIR
+from adventofcode.util.input_helpers import get_input_directory_path,get_input_path
 
 
 def get_input(year: int, day: int):
@@ -17,6 +18,7 @@ def _download_input(year: int, day: int, session: str) -> bytes:
     """
     cookies = {'session': session}
     url = f'https://adventofcode.com/{year}/day/{day}/input'
+    # TODO: put User-Agent in env variables
     headers = {'User-Agent': 'github.com/AntoineGanne/adventofcode by antoine.ganne+aoc@hotmail.fr'}
     resp = requests.get(url, cookies=cookies)
     resp.raise_for_status()
@@ -24,12 +26,12 @@ def _download_input(year: int, day: int, session: str) -> bytes:
 
 
 def _save_input(data: bytes, year: int, day: int) -> None:
-    inputs_path = os.path.join(ROOT_DIR, 'inputs')
+    inputs_path = get_input_directory_path(year, day)
 
-    if not os.path.exists((year_path := os.path.join(inputs_path, str(year)))):
+    if not os.path.exists((year_path := os.path.join(inputs_path))):
         os.mkdir(year_path)
 
-    with open(os.path.join(year_path, f'day_{day:02}.txt'), 'wb') as file:
+    with open(get_input_path(year,day), 'wb') as file:
         file.write(data)
 
 
