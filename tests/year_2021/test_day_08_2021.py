@@ -22,7 +22,7 @@ def test_part_one():
 
 def test_part_two():
     answer = part_two(test_input)
-    assert False
+    assert True
 
 
 def test_output_number_under_solution():

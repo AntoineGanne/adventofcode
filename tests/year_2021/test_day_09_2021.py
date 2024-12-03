@@ -17,5 +17,4 @@ def test_part_one():
 
 def test_part_two():
     answer = part_two(get_input_for_day(2021, 9))
-    print(answer)
     assert True

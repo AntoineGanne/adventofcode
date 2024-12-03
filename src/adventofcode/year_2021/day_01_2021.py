@@ -34,7 +34,7 @@ def part_two(input_data: List[str]):
         if i == 0 or i == 1:
             continue
         sum_depths = sum(sliding_window)
-        if i < 10: print(str(i) + " sum:" + str(sum_depths))
+        # if i < 10: print(str(i) + " sum:" + str(sum_depths))
         if sum_depths > last_depth:
             depth_increase_counter += 1
         last_depth = sum_depths

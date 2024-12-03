@@ -13,4 +13,4 @@ def test_part_one():
 
 def test_part_two():
     answer = part_two(get_test_input_for_day(2022, 13))
-    assert answer ==140
+    assert answer == 140
