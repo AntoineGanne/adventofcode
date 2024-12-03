@@ -1,5 +1,4 @@
 # Advent of Code ⭐️
-[![Stars collected](https://shields.io/static/v1?label=stars%20collected&message=68&color=yellow)]()
 [![tests](https://github.com/marcelblijleven/adventofcode/actions/workflows/tests.yaml/badge.svg)](https://github.com/antoineganne/adventofcode)
 [![version](https://img.shields.io/github/v/release/antoineganne/adventofcode.svg)](https://github.com/antoineganne/adventofcode/releases)
 <!--[![codecov](https://codecov.io/gh/marcelblijleven/adventofcode/branch/master/graph/badge.svg?token=jZ2TgfyltM)](https://codecov.io/gh/marcelblijleven/adventofcode)-->
@@ -12,55 +11,12 @@ Collection of my Advent of Code solutions in an overkill project setup I forked 
 - Solution profiler decorator using `Cprofile` and `pstats`
 - Automatic listing of completed solutions in the README
 - Automatic changelog, using semantic versioning and the conventional commit specification
-- A badge that is updated automatically with the amount of stars I've collected
 - Pip installable (`pip install -e .`) with:
-  - A `generate-readme` script, which updates the readme
   - A `run-all` script, which dynamically calls every solution in every `adventofcode.year_*.day_*` module
   - An `add-day` script, which add a solution day file using a template and downloads the input data from the AOC site automatically
 - Type checked (`mypy`) and linted (`flake8`)
 - Tested against multiple python versions using `tox` on each push to master and pull request
 
-<!-- start completed section -->
-## Completed ⭐️
-### 2019
-- day 01: part one ⭐️, part two ⭐️
-### 2021
-- day 01: part one ⭐️, part two ⭐️
-- day 02: part one ⭐️, part two ⭐️
-- day 03: part one ⭐️, part two ⭐️
-- day 04: part one ⭐️, part two ⭐️
-- day 05: part one ⭐️, part two ⭐️
-- day 06: part one ⭐️, part two ⭐️
-- day 07: part one ⭐️, part two ⭐️
-- day 08: part one ⭐️, part two ⭐️
-- day 09: part one ⭐️, part two ⭐️
-- day 10: part one ⭐️, part two ⭐️
-- day 11: part one ⭐️, part two ⭐️
-- day 12: part one ⭐️, part two ⭐️
-- day 13: part one ⭐️, part two ⭐️
-- day 14: part one ⭐️, part two ⭐️
-- day 15: part one ⭐️, part two ⭐️
-- day 16: part one ⭐️, part two ⭐️
-- day 17: part one ⭐️, part two ⭐️
-- day 20: part one ⭐️, part two ⭐️
-- day 22: part one ⭐️, part two ⭐️
-### 2022
-- day 01: part one ⭐️, part two ⭐️
-- day 02: part one ⭐️, part two ⭐️
-- day 03: part one ⭐️, part two ⭐️
-- day 04: part one ⭐️, part two ⭐️
-- day 05: part one ⭐️, part two ⭐️
-- day 06: part one ⭐️, part two ⭐️
-- day 07: part one ⭐️, part two ⭐️
-- day 08: part one ⭐️, part two ⭐️
-- day 09: part one ⭐️, part two ⭐️
-- day 10: part one ⭐️, part two ⭐️
-- day 11: part one ⭐️, part two ⭐️
-- day 12: part one ⭐️, part two ⭐️
-- day 13: part one ⭐️, part two ⭐️
-- day 14: part one ⭐️, part two ⭐️
-
-<!-- end completed section -->
 
 ## Decorators
 What's Christmas without decorations? 🎄
@@ -130,13 +86,6 @@ Wrote template to /Users/marcelblijleven/code/github.com/marcelblijleven/advento
 Input data already exists for year 2015 day 14, skipping download
 ```
 
-### generate-readme
-The `generate-readme` script dynamically searches for all solutions and writes them to the README.md file.
-When a solution file has a function called `part_one`, it adds a star. When it has a function called `part_two`, it adds another
-star. The `star counter` badge at the top of the README.md file is then updated with the total amount of stars found.
-
-This script is only used in the Github workflow `update_readme.yml`, but can be run locally to using `generate-readme`
-
 ### clean-repo
 The `clean-repo` script is used to delete all solutions and inputs from the project. This can be useful if you want to start over,
 or if you've just forked this repo. The `clean-repo` command is run in 'dry run mode' by default, to disable it and actually
@@ -146,4 +95,3 @@ start deleting directories and files, use:
 (venv) clean-repo --dry-run false 
 ```
 
-**Note**: _not all years/solutions have been migrated yet from my previous repositories_
